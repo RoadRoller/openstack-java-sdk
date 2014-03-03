@@ -3,23 +3,23 @@ package com.woorea.openstack.nova.model;
 import java.io.Serializable;
 import java.util.Calendar;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("cloudpipe")
 public class Cloudpipe implements Serializable {
-	
+
 	private String projectId;
-	
+
 	private String internalIp;
-	
+
 	private String publicIp;
-	
+
 	private String publicPort;
-	
+
 	private String state;
-	
+
 	private String instanceId;
-	
+
 	private Calendar createdAt;
 
 	/**
@@ -30,7 +30,8 @@ public class Cloudpipe implements Serializable {
 	}
 
 	/**
-	 * @param projectId the projectId to set
+	 * @param projectId
+	 *            the projectId to set
 	 */
 	public void setProjectId(String projectId) {
 		this.projectId = projectId;
@@ -44,7 +45,8 @@ public class Cloudpipe implements Serializable {
 	}
 
 	/**
-	 * @param internalIp the internalIp to set
+	 * @param internalIp
+	 *            the internalIp to set
 	 */
 	public void setInternalIp(String internalIp) {
 		this.internalIp = internalIp;
@@ -58,7 +60,8 @@ public class Cloudpipe implements Serializable {
 	}
 
 	/**
-	 * @param publicIp the publicIp to set
+	 * @param publicIp
+	 *            the publicIp to set
 	 */
 	public void setPublicIp(String publicIp) {
 		this.publicIp = publicIp;
@@ -72,7 +75,8 @@ public class Cloudpipe implements Serializable {
 	}
 
 	/**
-	 * @param publicPort the publicPort to set
+	 * @param publicPort
+	 *            the publicPort to set
 	 */
 	public void setPublicPort(String publicPort) {
 		this.publicPort = publicPort;
@@ -86,7 +90,8 @@ public class Cloudpipe implements Serializable {
 	}
 
 	/**
-	 * @param state the state to set
+	 * @param state
+	 *            the state to set
 	 */
 	public void setState(String state) {
 		this.state = state;
@@ -100,7 +105,8 @@ public class Cloudpipe implements Serializable {
 	}
 
 	/**
-	 * @param instanceId the instanceId to set
+	 * @param instanceId
+	 *            the instanceId to set
 	 */
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
@@ -114,13 +120,16 @@ public class Cloudpipe implements Serializable {
 	}
 
 	/**
-	 * @param createdAt the createdAt to set
+	 * @param createdAt
+	 *            the createdAt to set
 	 */
 	public void setCreatedAt(Calendar createdAt) {
 		this.createdAt = createdAt;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -130,5 +139,5 @@ public class Cloudpipe implements Serializable {
 				+ publicPort + ", state=" + state + ", instanceId="
 				+ instanceId + ", createdAt=" + createdAt + "]";
 	}
-	
+
 }

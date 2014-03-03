@@ -1,13 +1,13 @@
 package com.woorea.openstack.nova.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("certificate")
 public class Certificate {
 
 	private String data;
-	
+
 	@JsonProperty("private_key")
 	private String privateKey;
 
@@ -25,12 +25,14 @@ public class Certificate {
 		return privateKey;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Certificate [data=" + data + ", privateKey=" + privateKey + "]";
 	}
-	
+
 }

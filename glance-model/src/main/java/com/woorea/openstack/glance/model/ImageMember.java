@@ -2,18 +2,18 @@ package com.woorea.openstack.glance.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ImageMember implements Serializable {
 
 	@JsonProperty("can_share")
 	private boolean canShare;
-	
+
 	@JsonProperty("member_id")
 	private String memberId;
 
 	public ImageMember() {
-		
+
 	}
 
 	public ImageMember(boolean canShare, String memberId) {
@@ -29,7 +29,8 @@ public class ImageMember implements Serializable {
 	}
 
 	/**
-	 * @param canShare the canShare to set
+	 * @param canShare
+	 *            the canShare to set
 	 */
 	public void setCanShare(boolean canShare) {
 		this.canShare = canShare;
@@ -43,7 +44,8 @@ public class ImageMember implements Serializable {
 	}
 
 	/**
-	 * @param memberId the memberId to set
+	 * @param memberId
+	 *            the memberId to set
 	 */
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;

@@ -2,19 +2,19 @@ package com.woorea.openstack.nova.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("security_group")
 public class SecurityGroupForCreate implements Serializable {
-	
+
 	private String name;
-	
+
 	private String description;
 
 	public SecurityGroupForCreate() {
 		super();
 	}
-	
+
 	public SecurityGroupForCreate(String name) {
 		this.name = name;
 	}
@@ -32,7 +32,8 @@ public class SecurityGroupForCreate implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -46,13 +47,16 @@ public class SecurityGroupForCreate implements Serializable {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -60,5 +64,5 @@ public class SecurityGroupForCreate implements Serializable {
 		return "SecurityGroupForCreate [name=" + name + ", description="
 				+ description + "]";
 	}
-	
+
 }

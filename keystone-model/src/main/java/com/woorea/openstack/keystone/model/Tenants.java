@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Tenants implements Iterable<Tenant>, Serializable {
 
 	@JsonProperty("tenants")
 	private List<Tenant> list;
-	
+
 	@JsonProperty("tenants_links")
 	private List<Link> links;
 
@@ -28,7 +28,9 @@ public class Tenants implements Iterable<Tenant>, Serializable {
 		return links;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -40,5 +42,5 @@ public class Tenants implements Iterable<Tenant>, Serializable {
 	public Iterator<Tenant> iterator() {
 		return list.iterator();
 	}
-	
+
 }

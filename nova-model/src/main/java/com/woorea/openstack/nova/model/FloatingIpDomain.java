@@ -2,18 +2,18 @@ package com.woorea.openstack.nova.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("floating-ip-pool")
 public class FloatingIpDomain implements Serializable {
 
 	private String domain;
-	
+
 	private String scope;
-	
+
 	private String project;
-	
+
 	@JsonProperty("availabilityZone")
 	private String availabilityZone;
 
@@ -45,7 +45,9 @@ public class FloatingIpDomain implements Serializable {
 		return availabilityZone;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -54,5 +56,5 @@ public class FloatingIpDomain implements Serializable {
 				+ ", project=" + project + ", availabilityZone="
 				+ availabilityZone + "]";
 	}
-	
+
 }

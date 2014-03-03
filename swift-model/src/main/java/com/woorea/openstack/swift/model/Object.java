@@ -3,22 +3,21 @@ package com.woorea.openstack.swift.model;
 import java.io.Serializable;
 import java.util.Calendar;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Object implements Serializable {
-	
+
 	private String subdir;
-	
+
 	private String name;
-	
+
 	private String hash;
-	
+
 	private int bytes;
-	
+
 	@JsonProperty("content_type")
 	private String contentType;
-	
+
 	@JsonProperty("last_modified")
 	private Calendar lastModified;
 
@@ -30,7 +29,8 @@ public class Object implements Serializable {
 	}
 
 	/**
-	 * @param subdir the subdir to set
+	 * @param subdir
+	 *            the subdir to set
 	 */
 	public void setSubdir(String subdir) {
 		this.subdir = subdir;
@@ -44,7 +44,8 @@ public class Object implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -58,7 +59,8 @@ public class Object implements Serializable {
 	}
 
 	/**
-	 * @param hash the hash to set
+	 * @param hash
+	 *            the hash to set
 	 */
 	public void setHash(String hash) {
 		this.hash = hash;
@@ -72,7 +74,8 @@ public class Object implements Serializable {
 	}
 
 	/**
-	 * @param bytes the bytes to set
+	 * @param bytes
+	 *            the bytes to set
 	 */
 	public void setBytes(int bytes) {
 		this.bytes = bytes;
@@ -86,7 +89,8 @@ public class Object implements Serializable {
 	}
 
 	/**
-	 * @param contentType the contentType to set
+	 * @param contentType
+	 *            the contentType to set
 	 */
 	public void setContentType(String contentType) {
 		this.contentType = contentType;
@@ -100,10 +104,11 @@ public class Object implements Serializable {
 	}
 
 	/**
-	 * @param lastModified the lastModified to set
+	 * @param lastModified
+	 *            the lastModified to set
 	 */
 	public void setLastModified(Calendar lastModified) {
 		this.lastModified = lastModified;
 	}
-	
+
 }

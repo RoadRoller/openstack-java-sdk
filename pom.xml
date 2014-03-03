@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.woorea</groupId>
 	<artifactId>openstack-java-sdk</artifactId>
-	<version>3.2.2-SNAPSHOT</version>
+	<version>3.0.3x</version>
 	<packaging>pom</packaging>
 	<name>OpenStack Java SDK</name>
 	<description>OpenStack Java SDK</description>
@@ -81,11 +81,26 @@
 	</scm>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
-		</dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.2.3</version>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -105,7 +120,7 @@
 				<artifactId>maven-gpg-plugin</artifactId>
 				<version>1.4</version>
 				<configuration>
-					<skip>${skip.sign}</skip>
+					<skip>true</skip>
 				</configuration>
 				<executions>
 					<execution>

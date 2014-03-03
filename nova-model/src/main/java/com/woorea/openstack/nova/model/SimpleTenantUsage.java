@@ -4,28 +4,28 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("tenant_usage")
 public class SimpleTenantUsage implements Serializable {
-	
+
 	@JsonProperty("total_memory_mb_usage")
 	private BigDecimal totalMemoryMbUsage;
-	
+
 	@JsonProperty("total_vcpus_usage")
 	private BigDecimal totalVcpusUsage;
-	
+
 	@JsonProperty("total_local_gb_usage")
 	private BigDecimal totalLocalGbUsage;
 
 	private String start;
-	
+
 	private String stop;
-	
+
 	@JsonProperty("tenant_id")
 	private String tenantId;
-	
+
 	@JsonProperty("total_hours")
 	private String totalHours;
 
@@ -40,7 +40,8 @@ public class SimpleTenantUsage implements Serializable {
 	}
 
 	/**
-	 * @param totalMemoryMbUsage the totalMemoryMbUsage to set
+	 * @param totalMemoryMbUsage
+	 *            the totalMemoryMbUsage to set
 	 */
 	public void setTotalMemoryMbUsage(BigDecimal totalMemoryMbUsage) {
 		this.totalMemoryMbUsage = totalMemoryMbUsage;
@@ -54,7 +55,8 @@ public class SimpleTenantUsage implements Serializable {
 	}
 
 	/**
-	 * @param totalVcpusUsage the totalVcpusUsage to set
+	 * @param totalVcpusUsage
+	 *            the totalVcpusUsage to set
 	 */
 	public void setTotalVcpusUsage(BigDecimal totalVcpusUsage) {
 		this.totalVcpusUsage = totalVcpusUsage;
@@ -68,7 +70,8 @@ public class SimpleTenantUsage implements Serializable {
 	}
 
 	/**
-	 * @param totalLocalGbUsage the totalLocalGbUsage to set
+	 * @param totalLocalGbUsage
+	 *            the totalLocalGbUsage to set
 	 */
 	public void setTotalLocalGbUsage(BigDecimal totalLocalGbUsage) {
 		this.totalLocalGbUsage = totalLocalGbUsage;
@@ -82,7 +85,8 @@ public class SimpleTenantUsage implements Serializable {
 	}
 
 	/**
-	 * @param start the start to set
+	 * @param start
+	 *            the start to set
 	 */
 	public void setStart(String start) {
 		this.start = start;
@@ -96,7 +100,8 @@ public class SimpleTenantUsage implements Serializable {
 	}
 
 	/**
-	 * @param stop the stop to set
+	 * @param stop
+	 *            the stop to set
 	 */
 	public void setStop(String stop) {
 		this.stop = stop;
@@ -110,7 +115,8 @@ public class SimpleTenantUsage implements Serializable {
 	}
 
 	/**
-	 * @param tenantId the tenantId to set
+	 * @param tenantId
+	 *            the tenantId to set
 	 */
 	public void setTenantId(String tenantId) {
 		this.tenantId = tenantId;
@@ -124,7 +130,8 @@ public class SimpleTenantUsage implements Serializable {
 	}
 
 	/**
-	 * @param totalHours the totalHours to set
+	 * @param totalHours
+	 *            the totalHours to set
 	 */
 	public void setTotalHours(String totalHours) {
 		this.totalHours = totalHours;
@@ -138,7 +145,9 @@ public class SimpleTenantUsage implements Serializable {
 		this.serverUsages = serverUsages;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -158,7 +167,7 @@ public class SimpleTenantUsage implements Serializable {
 
 		@JsonProperty("started_at")
 		private String startedAt;
-	
+
 		@JsonProperty("ended_at")
 		private String endedAt;
 

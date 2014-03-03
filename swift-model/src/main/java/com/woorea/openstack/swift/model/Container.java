@@ -2,15 +2,15 @@ package com.woorea.openstack.swift.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Container implements Serializable {
-	
+
 	private String name;
-	
+
 	@JsonProperty("count")
 	private Integer objectCount;
-	
+
 	@JsonProperty("bytes")
 	private Long bytesUsed;
 
@@ -22,7 +22,8 @@ public class Container implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -36,7 +37,8 @@ public class Container implements Serializable {
 	}
 
 	/**
-	 * @param objectCount the objectCount to set
+	 * @param objectCount
+	 *            the objectCount to set
 	 */
 	public void setObjectCount(Integer objectCount) {
 		this.objectCount = objectCount;
@@ -50,13 +52,16 @@ public class Container implements Serializable {
 	}
 
 	/**
-	 * @param bytesUsed the bytesUsed to set
+	 * @param bytesUsed
+	 *            the bytesUsed to set
 	 */
 	public void setBytesUsed(Long bytesUsed) {
 		this.bytesUsed = bytesUsed;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -65,6 +70,5 @@ public class Container implements Serializable {
 				+ ", bytesUsed=" + bytesUsed + "]";
 	}
 
-	
-	
+
 }

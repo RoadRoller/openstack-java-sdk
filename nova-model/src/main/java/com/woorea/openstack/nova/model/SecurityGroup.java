@@ -3,72 +3,72 @@ package com.woorea.openstack.nova.model;
 import java.io.Serializable;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("security_group")
 public class SecurityGroup implements Serializable {
-	
+
 	@JsonRootName("security_group_rule")
 	public static final class Rule implements Serializable {
-	
-	    public static final class Group implements Serializable {
 
-	        private String name;
+		public static final class Group implements Serializable {
 
-	        @JsonProperty("tenant_id")
-	        private String tenantId;
+			private String name;
 
-	        public String getName() {
-	            return name;
-	        }
-	        
-	        public String getTenantId() {
-	            return tenantId;
-	        }
+			@JsonProperty("tenant_id")
+			private String tenantId;
 
-	        @Override
-	        public String toString() {
-	            return "Group [name=" + name + ", tenantId=" + tenantId + "]";
-	        }
+			public String getName() {
+				return name;
+			}
 
-	    }
+			public String getTenantId() {
+				return tenantId;
+			}
 
-	    public static final class IpRange implements Serializable {
+			@Override
+			public String toString() {
+				return "Group [name=" + name + ", tenantId=" + tenantId + "]";
+			}
 
-	        private String cidr;
+		}
 
-	        public String getCidr() {
-	            return cidr;
-	        }
+		public static final class IpRange implements Serializable {
 
-	        @Override
-	        public String toString() {
-	            return "IpRange [cidr=" + cidr + "]";
-	        }
+			private String cidr;
 
-	    }
+			public String getCidr() {
+				return cidr;
+			}
 
-	    private String id;
+			@Override
+			public String toString() {
+				return "IpRange [cidr=" + cidr + "]";
+			}
 
-	    private String name;
+		}
 
-	    @JsonProperty("parent_group_id")
-	    private String parentGroupId;
+		private String id;
 
-	    @JsonProperty("from_port")
-	    private Integer fromPort;
+		private String name;
 
-	    @JsonProperty("to_port")
-	    private Integer toPort;
+		@JsonProperty("parent_group_id")
+		private String parentGroupId;
 
-	    @JsonProperty("ip_protocol")
-	    private String ipProtocol;
+		@JsonProperty("from_port")
+		private Integer fromPort;
 
-	    @JsonProperty("ip_range")
-	    private IpRange ipRange = new IpRange();
+		@JsonProperty("to_port")
+		private Integer toPort;
 
-	    private Group group;
+		@JsonProperty("ip_protocol")
+		private String ipProtocol;
+
+		@JsonProperty("ip_range")
+		private IpRange ipRange = new IpRange();
+
+		private Group group;
 
 		/**
 		 * @return the id
@@ -126,7 +126,9 @@ public class SecurityGroup implements Serializable {
 			return group;
 		}
 
-		/* (non-Javadoc)
+		/*
+		 * (non-Javadoc)
+		 * 
 		 * @see java.lang.Object#toString()
 		 */
 		@Override
@@ -136,20 +138,20 @@ public class SecurityGroup implements Serializable {
 					+ toPort + ", ipProtocol=" + ipProtocol + ", ipRange="
 					+ ipRange + ", group=" + group + "]";
 		}
-		
+
 	}
 
 	private String id;
-	
+
 	private String name;
-	
+
 	private String description;
-	
+
 	@JsonProperty("tenant_id")
 	private String tenantId;
-	
+
 	private List<Rule> rules;
-	
+
 	private List<Link> links;
 
 	/**
@@ -194,7 +196,9 @@ public class SecurityGroup implements Serializable {
 		return links;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -203,5 +207,5 @@ public class SecurityGroup implements Serializable {
 				+ description + ", tenantId=" + tenantId + ", rules=" + rules
 				+ ", links=" + links + "]";
 	}
-	
+
 }

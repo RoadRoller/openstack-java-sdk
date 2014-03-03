@@ -2,7 +2,7 @@ package com.woorea.openstack.nova.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("volumeAttachment")
 public class VolumeAttachment implements Serializable {
@@ -47,7 +47,9 @@ public class VolumeAttachment implements Serializable {
 		this.device = device;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

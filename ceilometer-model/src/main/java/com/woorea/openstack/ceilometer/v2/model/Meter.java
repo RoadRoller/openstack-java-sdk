@@ -1,23 +1,23 @@
 package com.woorea.openstack.ceilometer.v2.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Meter {
 
 	@JsonProperty("user_id")
 	private String user;
-	
-	
+
+
 	private String name;
-	
+
 	@JsonProperty("resource_id")
 	private String resource;
-	
+
 	@JsonProperty("project_id")
 	private String project;
-	
+
 	private String type;
-	
+
 	private String unit;
 
 	public String getUser() {

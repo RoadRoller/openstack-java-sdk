@@ -5,8 +5,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("image")
 public class Image implements Serializable {
@@ -14,47 +14,47 @@ public class Image implements Serializable {
 	private String id;
 
 	private String uri;
-	
+
 	private String name;
-	
+
 	@JsonProperty("disk_format")
 	private String diskFormat;
-	
+
 	@JsonProperty("container_format")
 	private String containerFormat;
-	
+
 	private Long size;
-	
+
 	private String checksum;
-	
+
 	@JsonProperty("created_at")
 	private Calendar createdAt;
-	
+
 	@JsonProperty("updated_at")
 	private Calendar updatedAt;
-	
+
 	@JsonProperty("deleted_at")
 	private Calendar deletedAt;
-	
+
 	private String status;
-	
+
 	@JsonProperty("is_public")
 	private boolean isPublic;
-	
+
 	@JsonProperty("min_ram")
 	private Integer minRam;
-	
+
 	@JsonProperty("min_disk")
 	private Integer minDisk;
-	
+
 	private String owner;
-	
+
 	@JsonProperty("deleted")
 	private boolean isDeleted;
-	
+
 	@JsonProperty("protected")
 	private boolean isProtected;
-	
+
 	private Map<String, Object> properties;
 
 	/**
@@ -65,7 +65,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -79,7 +80,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param uri the uri to set
+	 * @param uri
+	 *            the uri to set
 	 */
 	public void setUri(String uri) {
 		this.uri = uri;
@@ -93,7 +95,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -107,7 +110,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param diskFormat the diskFormat to set
+	 * @param diskFormat
+	 *            the diskFormat to set
 	 */
 	public void setDiskFormat(String diskFormat) {
 		this.diskFormat = diskFormat;
@@ -121,7 +125,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param containerFormat the containerFormat to set
+	 * @param containerFormat
+	 *            the containerFormat to set
 	 */
 	public void setContainerFormat(String containerFormat) {
 		this.containerFormat = containerFormat;
@@ -135,7 +140,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param size the size to set
+	 * @param size
+	 *            the size to set
 	 */
 	public void setSize(Long size) {
 		this.size = size;
@@ -149,7 +155,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param checksum the checksum to set
+	 * @param checksum
+	 *            the checksum to set
 	 */
 	public void setChecksum(String checksum) {
 		this.checksum = checksum;
@@ -163,7 +170,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param createdAt the createdAt to set
+	 * @param createdAt
+	 *            the createdAt to set
 	 */
 	public void setCreatedAt(Calendar createdAt) {
 		this.createdAt = createdAt;
@@ -177,7 +185,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param updatedAt the updatedAt to set
+	 * @param updatedAt
+	 *            the updatedAt to set
 	 */
 	public void setUpdatedAt(Calendar updatedAt) {
 		this.updatedAt = updatedAt;
@@ -191,7 +200,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param deletedAt the deletedAt to set
+	 * @param deletedAt
+	 *            the deletedAt to set
 	 */
 	public void setDeletedAt(Calendar deletedAt) {
 		this.deletedAt = deletedAt;
@@ -205,7 +215,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param status
+	 *            the status to set
 	 */
 	public void setStatus(String status) {
 		this.status = status;
@@ -219,7 +230,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param isPublic the isPublic to set
+	 * @param isPublic
+	 *            the isPublic to set
 	 */
 	public void setPublic(boolean isPublic) {
 		this.isPublic = isPublic;
@@ -233,7 +245,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param minRam the minRam to set
+	 * @param minRam
+	 *            the minRam to set
 	 */
 	public void setMinRam(Integer minRam) {
 		this.minRam = minRam;
@@ -247,7 +260,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param minDisk the minDisk to set
+	 * @param minDisk
+	 *            the minDisk to set
 	 */
 	public void setMinDisk(Integer minDisk) {
 		this.minDisk = minDisk;
@@ -261,7 +275,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param owner the owner to set
+	 * @param owner
+	 *            the owner to set
 	 */
 	public void setOwner(String owner) {
 		this.owner = owner;
@@ -275,7 +290,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param isDeleted the isDeleted to set
+	 * @param isDeleted
+	 *            the isDeleted to set
 	 */
 	public void setDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
@@ -289,7 +305,8 @@ public class Image implements Serializable {
 	}
 
 	/**
-	 * @param isProtected the isProtected to set
+	 * @param isProtected
+	 *            the isProtected to set
 	 */
 	public void setProtected(boolean isProtected) {
 		this.isProtected = isProtected;
@@ -299,13 +316,15 @@ public class Image implements Serializable {
 	 * @return the properties
 	 */
 	public Map<String, Object> getProperties() {
-		if(properties == null) {
+		if (properties == null) {
 			properties = new HashMap<String, Object>();
 		}
 		return properties;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -320,5 +339,5 @@ public class Image implements Serializable {
 				+ isDeleted + ", isProtected=" + isProtected + ", properties="
 				+ properties + "]";
 	}
-	
+
 }

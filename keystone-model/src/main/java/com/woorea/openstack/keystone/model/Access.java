@@ -4,24 +4,24 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("access")
 public class Access implements Serializable {
 
 	public static final class Service {
-		
-		@JsonIgnoreProperties(ignoreUnknown=true)
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
 		public static final class Endpoint {
-			
+
 			private String region;
-			
+
 			private String publicURL;
-			
+
 			private String internalURL;
-			
+
 			private String adminURL;
 
 			/**
@@ -52,7 +52,9 @@ public class Access implements Serializable {
 				return adminURL;
 			}
 
-			/* (non-Javadoc)
+			/*
+			 * (non-Javadoc)
+			 * 
 			 * @see java.lang.Object#toString()
 			 */
 			@Override
@@ -61,15 +63,15 @@ public class Access implements Serializable {
 						+ publicURL + ", internalURL=" + internalURL
 						+ ", adminURL=" + adminURL + "]";
 			}
-			
+
 		}
-		
+
 		private String type;
-		
+
 		private String name;
-		
+
 		private List<Endpoint> endpoints;
-		
+
 		@JsonProperty("endpoints_links")
 		private List<Link> endpointsLinks;
 
@@ -101,7 +103,9 @@ public class Access implements Serializable {
 			return endpointsLinks;
 		}
 
-		/* (non-Javadoc)
+		/*
+		 * (non-Javadoc)
+		 * 
 		 * @see java.lang.Object#toString()
 		 */
 		@Override
@@ -109,17 +113,17 @@ public class Access implements Serializable {
 			return "Service [type=" + type + ", name=" + name + ", endpoints="
 					+ endpoints + ", endpointsLinks=" + endpointsLinks + "]";
 		}
-		
+
 	}
-	
-	@JsonIgnoreProperties(ignoreUnknown=true)
+
+	@JsonIgnoreProperties(ignoreUnknown = true)
 	public static final class User {
-		
-		@JsonIgnoreProperties(ignoreUnknown=true)
+
+		@JsonIgnoreProperties(ignoreUnknown = true)
 		public static final class Role {
-			
+
 			private String id;
-			
+
 			private String name;
 
 			/**
@@ -136,24 +140,26 @@ public class Access implements Serializable {
 				return name;
 			}
 
-			/* (non-Javadoc)
+			/*
+			 * (non-Javadoc)
+			 * 
 			 * @see java.lang.Object#toString()
 			 */
 			@Override
 			public String toString() {
 				return "Role [id=" + id + ", name=" + name + "]";
 			}
-			
+
 		}
-		
+
 		private String id;
-		
+
 		private String name;
-		
+
 		private String username;
-		
+
 		private List<Role> roles;
-		
+
 		@JsonProperty("roles_links")
 		private List<Link> rolesLinks;
 
@@ -192,7 +198,9 @@ public class Access implements Serializable {
 			return rolesLinks;
 		}
 
-		/* (non-Javadoc)
+		/*
+		 * (non-Javadoc)
+		 * 
 		 * @see java.lang.Object#toString()
 		 */
 		@Override
@@ -201,15 +209,15 @@ public class Access implements Serializable {
 					+ username + ", roles=" + roles + ", rolesLinks="
 					+ rolesLinks + "]";
 		}
-		
+
 	}
-	
+
 	private Token token;
-	
+
 	private List<Service> serviceCatalog;
-	
+
 	private User user;
-	
+
 	private Map<String, Object> metadata;
 
 	/**
@@ -240,7 +248,9 @@ public class Access implements Serializable {
 		return metadata;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -248,5 +258,5 @@ public class Access implements Serializable {
 		return "Access [token=" + token + ", serviceCatalog=" + serviceCatalog
 				+ ", user=" + user + ", metadata=" + metadata + "]";
 	}
-	
+
 }

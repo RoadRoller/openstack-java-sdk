@@ -1,14 +1,13 @@
 package com.woorea.openstack.keystone.model.authentication;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
-
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.woorea.openstack.keystone.model.Authentication;
 
 @JsonRootName("auth")
 public class TokenAuthentication extends Authentication {
-	
+
 	public static final class Token {
-		
+
 		private String id;
 
 		/**
@@ -19,16 +18,17 @@ public class TokenAuthentication extends Authentication {
 		}
 
 		/**
-		 * @param id the id to set
+		 * @param id
+		 *            the id to set
 		 */
 		public void setId(String id) {
 			this.id = id;
 		}
-		
+
 	}
-	
+
 	private Token token = new Token();
-	
+
 	public TokenAuthentication(String token) {
 		this.token.id = token;
 	}
@@ -41,10 +41,11 @@ public class TokenAuthentication extends Authentication {
 	}
 
 	/**
-	 * @param token the token to set
+	 * @param token
+	 *            the token to set
 	 */
 	public void setToken(Token token) {
 		this.token = token;
 	}
-	
+
 }

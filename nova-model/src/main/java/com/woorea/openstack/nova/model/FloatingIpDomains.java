@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class FloatingIpDomains implements Iterable<FloatingIpDomain>, Serializable {
 
@@ -23,12 +23,14 @@ public class FloatingIpDomains implements Iterable<FloatingIpDomain>, Serializab
 		return list.iterator();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "FloatingIpDomains [list=" + list + "]";
 	}
-	
+
 }

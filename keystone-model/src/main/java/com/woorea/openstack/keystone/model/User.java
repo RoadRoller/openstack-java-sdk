@@ -2,25 +2,25 @@ package com.woorea.openstack.keystone.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("user")
 public class User implements Serializable {
 
 	private String id;
-	
+
 	private String username;
-	
+
 	@JsonProperty("OS_KSADM_password")
 	private String password;
-	
+
 	private String tenantId;
-	
+
 	private String name;
-	
+
 	private String email;
-	
+
 	private Boolean enabled;
 
 	/**
@@ -31,7 +31,8 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -45,7 +46,8 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * @param username the username to set
+	 * @param username
+	 *            the username to set
 	 */
 	public void setUsername(String username) {
 		this.username = username;
@@ -59,7 +61,8 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * @param password the password to set
+	 * @param password
+	 *            the password to set
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -73,7 +76,8 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * @param tenantId the tenantId to set
+	 * @param tenantId
+	 *            the tenantId to set
 	 */
 	public void setTenantId(String tenantId) {
 		this.tenantId = tenantId;
@@ -87,7 +91,8 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -101,7 +106,8 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * @param email the email to set
+	 * @param email
+	 *            the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -115,13 +121,16 @@ public class User implements Serializable {
 	}
 
 	/**
-	 * @param enabled the enabled to set
+	 * @param enabled
+	 *            the enabled to set
 	 */
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -130,5 +139,5 @@ public class User implements Serializable {
 				+ password + ", tenantId=" + tenantId + ", name=" + name
 				+ ", email=" + email + ", enabled=" + enabled + "]";
 	}
-	
+
 }

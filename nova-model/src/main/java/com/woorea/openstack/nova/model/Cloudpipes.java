@@ -3,7 +3,7 @@ package com.woorea.openstack.nova.model;
 import java.io.Serializable;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Cloudpipes implements Serializable {
 
@@ -16,13 +16,15 @@ public class Cloudpipes implements Serializable {
 	public List<Cloudpipe> getList() {
 		return list;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Flavors [list=" + list + "]";
 	}
-	
+
 }

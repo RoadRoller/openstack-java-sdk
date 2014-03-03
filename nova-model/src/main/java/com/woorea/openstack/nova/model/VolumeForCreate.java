@@ -3,8 +3,8 @@ package com.woorea.openstack.nova.model;
 import java.io.Serializable;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("volume")
 public class VolumeForCreate implements Serializable {
@@ -33,7 +33,8 @@ public class VolumeForCreate implements Serializable {
 	}
 
 	/**
-	 * @param size the size to set
+	 * @param size
+	 *            the size to set
 	 */
 	public void setSize(Integer size) {
 		this.size = size;
@@ -47,7 +48,8 @@ public class VolumeForCreate implements Serializable {
 	}
 
 	/**
-	 * @param availabilityZone the availabilityZone to set
+	 * @param availabilityZone
+	 *            the availabilityZone to set
 	 */
 	public void setAvailabilityZone(String availabilityZone) {
 		this.availabilityZone = availabilityZone;
@@ -61,7 +63,8 @@ public class VolumeForCreate implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -75,7 +78,8 @@ public class VolumeForCreate implements Serializable {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -89,7 +93,8 @@ public class VolumeForCreate implements Serializable {
 	}
 
 	/**
-	 * @param snapshotId the snapshotId to set
+	 * @param snapshotId
+	 *            the snapshotId to set
 	 */
 	public void setSnapshotId(Integer snapshotId) {
 		this.snapshotId = snapshotId;
@@ -103,13 +108,16 @@ public class VolumeForCreate implements Serializable {
 	}
 
 	/**
-	 * @param metadata the metadata to set
+	 * @param metadata
+	 *            the metadata to set
 	 */
 	public void setMetadata(Map<String, String> metadata) {
 		this.metadata = metadata;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

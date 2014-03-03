@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class KeyPairs implements Iterable<KeyPair>, Serializable {
-	
+
 	public static final class KeyPairWrapper implements Serializable {
-		
+
 		@JsonProperty
 		private KeyPair keypair;
-		
+
 	}
 
 	@JsonProperty("keypairs")
@@ -24,18 +24,20 @@ public class KeyPairs implements Iterable<KeyPair>, Serializable {
 	 */
 	public List<KeyPair> getList() {
 		List<KeyPair> list = new ArrayList<KeyPair>();
-		for(KeyPairWrapper wrapper : this.list) {
+		for (KeyPairWrapper wrapper : this.list) {
 			list.add(wrapper.keypair);
 		}
 		return list;
 	}
-	
+
 	@Override
 	public Iterator<KeyPair> iterator() {
 		return getList().iterator();
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

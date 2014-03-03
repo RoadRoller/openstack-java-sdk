@@ -1,16 +1,15 @@
 package com.woorea.openstack.keystone.model.authentication;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
-
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.woorea.openstack.keystone.model.Authentication;
 
 @JsonRootName("auth")
 public class UsernamePassword extends Authentication {
-	
+
 	public static final class PasswordCredentials {
-		
+
 		private String username;
-		
+
 		private String password;
 
 		/**
@@ -21,7 +20,8 @@ public class UsernamePassword extends Authentication {
 		}
 
 		/**
-		 * @param username the username to set
+		 * @param username
+		 *            the username to set
 		 */
 		public void setUsername(String username) {
 			this.username = username;
@@ -35,20 +35,21 @@ public class UsernamePassword extends Authentication {
 		}
 
 		/**
-		 * @param password the password to set
+		 * @param password
+		 *            the password to set
 		 */
 		public void setPassword(String password) {
 			this.password = password;
 		}
-		
+
 	}
-	
+
 	private PasswordCredentials passwordCredentials = new PasswordCredentials();
-	
+
 	public UsernamePassword() {
-		
+
 	}
-	
+
 	public UsernamePassword(String username, String password) {
 		passwordCredentials.setUsername(username);
 		passwordCredentials.setPassword(password);
@@ -62,10 +63,11 @@ public class UsernamePassword extends Authentication {
 	}
 
 	/**
-	 * @param passwordCredentials the passwordCredentials to set
+	 * @param passwordCredentials
+	 *            the passwordCredentials to set
 	 */
 	public void setPasswordCredentials(PasswordCredentials passwordCredentials) {
 		this.passwordCredentials = passwordCredentials;
 	}
-	
+
 }

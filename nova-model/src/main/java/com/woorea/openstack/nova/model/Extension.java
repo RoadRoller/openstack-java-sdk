@@ -4,21 +4,21 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("extension")
 public class Extension implements Serializable {
 
 	private String alias;
-	
+
 	private String description;
-	
+
 	private String name;
-	
+
 	private String namespace;
-	
+
 	private Calendar updated;
-	
+
 	private List<Link> links;
 
 	/**
@@ -63,7 +63,9 @@ public class Extension implements Serializable {
 		return links;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -71,5 +73,5 @@ public class Extension implements Serializable {
 		return "Extension [alias=" + alias + ", description=" + description
 				+ ", name=" + name + ", namespace=" + namespace + "]";
 	}
-	
+
 }

@@ -3,41 +3,41 @@ package com.woorea.openstack.nova.model;
 import java.io.Serializable;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("flavor")
 public class Flavor implements Serializable {
 
 	private String id;
-	
+
 	private String name;
-	
+
 	private String vcpus;
-	
+
 	private Integer ram;
-	
+
 	private String disk;
-	
+
 	@JsonProperty("OS-FLV-EXT-DATA:ephemeral")
 	private Integer ephemeral;
-	
+
 	private String swap;
-	
+
 	@JsonProperty("rxtx_factor")
 	private Float rxtxFactor;
-	
+
 	@JsonProperty("OS-FLV-DISABLED:disabled")
 	private Boolean disabled;
-	
+
 	@JsonProperty("rxtx_quota")
 	private Integer rxtxQuota;
-	
+
 	@JsonProperty("rxtx_cap")
 	private Integer rxtxCap;
-	
+
 	private List<Link> links;
-	
+
 	@JsonProperty("os-flavor-access:is_public")
 	private Boolean isPublic;
 
@@ -49,7 +49,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -63,7 +64,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -77,7 +79,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param vcpus the vcpus to set
+	 * @param vcpus
+	 *            the vcpus to set
 	 */
 	public void setVcpus(String vcpus) {
 		this.vcpus = vcpus;
@@ -91,7 +94,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param ram the ram to set
+	 * @param ram
+	 *            the ram to set
 	 */
 	public void setRam(Integer ram) {
 		this.ram = ram;
@@ -105,7 +109,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param disk the disk to set
+	 * @param disk
+	 *            the disk to set
 	 */
 	public void setDisk(String disk) {
 		this.disk = disk;
@@ -119,7 +124,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param ephemeral the ephemeral to set
+	 * @param ephemeral
+	 *            the ephemeral to set
 	 */
 	public void setEphemeral(Integer ephemeral) {
 		this.ephemeral = ephemeral;
@@ -133,7 +139,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param swap the swap to set
+	 * @param swap
+	 *            the swap to set
 	 */
 	public void setSwap(String swap) {
 		this.swap = swap;
@@ -147,7 +154,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param rxtxFactor the rxtxFactor to set
+	 * @param rxtxFactor
+	 *            the rxtxFactor to set
 	 */
 	public void setRxtxFactor(Float rxtxFactor) {
 		this.rxtxFactor = rxtxFactor;
@@ -161,7 +169,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param rxtxQuota the rxtxQuota to set
+	 * @param rxtxQuota
+	 *            the rxtxQuota to set
 	 */
 	public void setRxtxQuota(Integer rxtxQuota) {
 		this.rxtxQuota = rxtxQuota;
@@ -175,7 +184,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param rxtxCap the rxtxCap to set
+	 * @param rxtxCap
+	 *            the rxtxCap to set
 	 */
 	public void setRxtxCap(Integer rxtxCap) {
 		this.rxtxCap = rxtxCap;
@@ -189,12 +199,13 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param disabled the disabled to set
+	 * @param disabled
+	 *            the disabled to set
 	 */
 	public void setDisabled(Boolean disabled) {
 		this.disabled = disabled;
 	}
-	
+
 	/**
 	 * @return the isPublic
 	 */
@@ -203,7 +214,8 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param isPublic the isPublic to set
+	 * @param isPublic
+	 *            the isPublic to set
 	 */
 	public void setPublic(Boolean isPublic) {
 		this.isPublic = isPublic;
@@ -217,13 +229,16 @@ public class Flavor implements Serializable {
 	}
 
 	/**
-	 * @param links the links to set
+	 * @param links
+	 *            the links to set
 	 */
 	public void setLinks(List<Link> links) {
 		this.links = links;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -235,5 +250,5 @@ public class Flavor implements Serializable {
 				+ ", rxtxCap=" + rxtxCap + ", links=" + links + ", isPublic="
 				+ isPublic + "]";
 	}
-	
+
 }

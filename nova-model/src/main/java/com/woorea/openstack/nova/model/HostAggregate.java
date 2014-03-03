@@ -4,32 +4,32 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("aggregate")
 public class HostAggregate implements Serializable {
-	
+
 	private String id;
 
 	private String name;
-	
+
 	@JsonProperty("availability_zone")
 	private String availabilityZone;
-	
+
 	@JsonProperty("created_at")
 	private String createdAt;
-	
+
 	@JsonProperty("updated_at")
 	private String updatedAt;
-	
+
 	@JsonProperty("deleted_at")
 	private String deletedAt;
-	
+
 	private Boolean deleted;
-	
+
 	private List<String> hosts;
-	
+
 	private Map<String, String> metadata;
 
 	/**
@@ -95,7 +95,9 @@ public class HostAggregate implements Serializable {
 		return metadata;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -106,5 +108,5 @@ public class HostAggregate implements Serializable {
 				+ deletedAt + ", deleted=" + deleted + ", hosts=" + hosts
 				+ ", metadata=" + metadata + "]";
 	}
-	
+
 }

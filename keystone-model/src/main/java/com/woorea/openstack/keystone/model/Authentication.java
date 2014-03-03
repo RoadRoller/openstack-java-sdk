@@ -2,12 +2,10 @@ package com.woorea.openstack.keystone.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
-
 public abstract class Authentication implements Serializable {
 
 	private String tenantId;
-	
+
 	private String tenantName;
 
 	/**
@@ -18,7 +16,8 @@ public abstract class Authentication implements Serializable {
 	}
 
 	/**
-	 * @param tenantId the tenantId to set
+	 * @param tenantId
+	 *            the tenantId to set
 	 */
 	public void setTenantId(String tenantId) {
 		this.tenantId = tenantId;
@@ -32,10 +31,11 @@ public abstract class Authentication implements Serializable {
 	}
 
 	/**
-	 * @param tenantName the tenantName to set
+	 * @param tenantName
+	 *            the tenantName to set
 	 */
 	public void setTenantName(String tenantName) {
 		this.tenantName = tenantName;
 	}
-	
+
 }

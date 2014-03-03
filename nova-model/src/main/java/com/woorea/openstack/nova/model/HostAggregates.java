@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class HostAggregates implements Iterable<HostAggregate>, Serializable {
 
@@ -17,13 +17,15 @@ public class HostAggregates implements Iterable<HostAggregate>, Serializable {
 	public List<HostAggregate> getList() {
 		return list;
 	}
-	
+
 	@Override
 	public Iterator<HostAggregate> iterator() {
 		return list.iterator();
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

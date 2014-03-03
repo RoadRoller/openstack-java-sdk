@@ -4,8 +4,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.woorea.openstack.base.client.OpenStackRequest;
 
 public class AbsOpenStackCmd<T> extends OpenStackRequest<T> {
@@ -18,7 +17,8 @@ public class AbsOpenStackCmd<T> extends OpenStackRequest<T> {
 	}
 
 	/**
-	 * @param query the query to set
+	 * @param query
+	 *            the query to set
 	 */
 	public void setQuery(T query) {
 		this.query = query;
@@ -68,13 +68,13 @@ public class AbsOpenStackCmd<T> extends OpenStackRequest<T> {
 	}
 
 	/*
-	public WebTarget queryParam(WebTarget target) {
-		Map<String, String> map = getObjectParamMap(this.query);
-		for (String fieldName : map.keySet()) {
-			target = target.queryParam(fieldName, map.get(fieldName));
-		}
-		return target;
-	}
-	*/
+	 * public WebTarget queryParam(WebTarget target) {
+	 * Map<String, String> map = getObjectParamMap(this.query);
+	 * for (String fieldName : map.keySet()) {
+	 * target = target.queryParam(fieldName, map.get(fieldName));
+	 * }
+	 * return target;
+	 * }
+	 */
 
 }

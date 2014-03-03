@@ -2,21 +2,21 @@ package com.woorea.openstack.nova.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("floating_ip")
 public class FloatingIp implements Serializable {
 
 	private String id;
-	
+
 	private String pool;
-	
+
 	private String ip;
-	
+
 	@JsonProperty("fixed_ip")
 	private String fixedIp;
-	
+
 	@JsonProperty("instance_id")
 	private String instanceId;
 
@@ -55,7 +55,9 @@ public class FloatingIp implements Serializable {
 		return instanceId;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -63,5 +65,5 @@ public class FloatingIp implements Serializable {
 		return "FloatingIp [id=" + id + ", pool=" + pool + ", ip=" + ip
 				+ ", fixedIp=" + fixedIp + ", instanceId=" + instanceId + "]";
 	}
-	
+
 }

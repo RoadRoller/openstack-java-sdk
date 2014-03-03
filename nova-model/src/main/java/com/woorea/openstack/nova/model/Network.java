@@ -2,80 +2,80 @@ package com.woorea.openstack.nova.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("network")
 public class Network implements Serializable {
 
 	private String id;
-	
+
 	@JsonProperty("vpn_public_address")
 	private String vpnPublicAddress;
-	
+
 	@JsonProperty("vpn_private_address")
 	private String vpnPrivateAddress;
-	
+
 	@JsonProperty("vpn_public_port")
 	private String vpnPublicPort;
-	
+
 	@JsonProperty("dhcp_start")
 	private String dhcpStart;
-	
+
 	private String bridge;
-	
+
 	@JsonProperty("bridge_interface")
 	private String bridgeInterface;
-	
+
 	@JsonProperty("updated_at")
 	private String updatedAt;
 
 	private Boolean deleted;
-	
+
 	private String vlan;
-	
+
 	private String broadcast;
-	
+
 	private String netmask;
-	
+
 	private Boolean injected;
-	
+
 	private String host;
-	
+
 	@JsonProperty("multi_host")
 	private Boolean multiHost;
-	
+
 	@JsonProperty("created_at")
 	private String createdAt;
-	
+
 	@JsonProperty("deleted_at")
 	private String deletedAt;
-	
+
 	private String cidr;
-	
+
 	@JsonProperty("cidr_v6")
 	private String cidrV6;
-	
+
 	private String gateway;
-	
+
 	@JsonProperty("gateway_v6")
 	private String gatewayV6;
-	
+
 	@JsonProperty("netmask_v6")
 	private String netmaskV6;
-	
+
 	@JsonProperty("project_id")
 	private String projectId;
-	
+
 	@JsonProperty("rxtx_base")
 	private String rxtxBase;
-	
+
 	private String dns1;
-	
+
 	private String dns2;
-	
+
 	private String label;
-	
+
 	private String priority;
 
 	/**
@@ -267,7 +267,9 @@ public class Network implements Serializable {
 		return priority;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -286,5 +288,5 @@ public class Network implements Serializable {
 				+ ", dns1=" + dns1 + ", dns2=" + dns2 + ", label=" + label
 				+ ", priority=" + priority + "]";
 	}
-	
+
 }

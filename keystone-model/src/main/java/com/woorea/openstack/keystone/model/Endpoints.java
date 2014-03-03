@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Endpoints implements Iterable<Endpoint>, Serializable {
 
@@ -17,8 +17,10 @@ public class Endpoints implements Iterable<Endpoint>, Serializable {
 	public List<Endpoint> getList() {
 		return list;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -30,5 +32,5 @@ public class Endpoints implements Iterable<Endpoint>, Serializable {
 	public Iterator<Endpoint> iterator() {
 		return list.iterator();
 	}
-	
+
 }

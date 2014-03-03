@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Flavors implements Iterable<Flavor>, Serializable {
 
@@ -17,13 +17,15 @@ public class Flavors implements Iterable<Flavor>, Serializable {
 	public List<Flavor> getList() {
 		return list;
 	}
-	
+
 	@Override
 	public Iterator<Flavor> iterator() {
 		return list.iterator();
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

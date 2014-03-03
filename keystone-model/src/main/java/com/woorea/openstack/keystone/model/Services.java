@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Services implements Iterable<Service>,  Serializable {
+public class Services implements Iterable<Service>, Serializable {
 
 	@JsonProperty("OS-KSADM:services")
 	private List<Service> list;
@@ -17,8 +17,10 @@ public class Services implements Iterable<Service>,  Serializable {
 	public List<Service> getList() {
 		return list;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -30,5 +32,5 @@ public class Services implements Iterable<Service>,  Serializable {
 	public Iterator<Service> iterator() {
 		return list.iterator();
 	}
-	
+
 }

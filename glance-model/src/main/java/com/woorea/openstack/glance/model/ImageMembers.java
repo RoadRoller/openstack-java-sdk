@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ImageMembers implements Iterable<ImageMember>, Serializable {
 
@@ -22,5 +22,5 @@ public class ImageMembers implements Iterable<ImageMember>, Serializable {
 	public Iterator<ImageMember> iterator() {
 		return list.iterator();
 	}
-	
+
 }

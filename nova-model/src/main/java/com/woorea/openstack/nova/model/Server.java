@@ -6,31 +6,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonAnySetter;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("server")
 public class Server implements Serializable {
-	
+
 	public static final class Addresses implements Serializable {
-		
+
 		public static final class Address implements Serializable {
-			
+
 			@JsonProperty("OS-EXT-IPS-MAC:mac_addr")
 			private String macAddr;
 
 			private String version;
-			
+
 			private String addr;
-			
+
 			@JsonProperty("OS-EXT-IPS:type")
 			private String type;
 
-                        /**
-                         * @return the macAddr
-                         */
+			/**
+			 * @return the macAddr
+			 */
 			public String getMacAddr() {
 				return macAddr;
 			}
@@ -48,7 +47,7 @@ public class Server implements Serializable {
 			public String getAddr() {
 				return addr;
 			}
-			
+
 
 			/**
 			 * @return the type
@@ -58,31 +57,35 @@ public class Server implements Serializable {
 			}
 
 			/**
-			 * @param version the version to set
+			 * @param version
+			 *            the version to set
 			 */
 			public void setVersion(String version) {
 				this.version = version;
 			}
 
 			/**
-			 * @param addr the addr to set
+			 * @param addr
+			 *            the addr to set
 			 */
 			public void setAddr(String addr) {
 				this.addr = addr;
 			}
 
 			/**
-			 * @param type the type to set
+			 * @param type
+			 *            the type to set
 			 */
 			public void setType(String type) {
 				this.type = type;
 			}
 
 			/**
-			 * @param macAddr the mac addr to set
+			 * @param macAddr
+			 *            the mac addr to set
 			 */
 			public void setMacAddr(String macAddr) {
-				this.macAddr= macAddr;
+				this.macAddr = macAddr;
 			}
 		}
 
@@ -92,6 +95,7 @@ public class Server implements Serializable {
 		public void add(String key, List<Address> value) {
 			addresses.put(key, value);
 		}
+
 		/**
 		 * @return the ip address List Map
 		 */
@@ -99,24 +103,26 @@ public class Server implements Serializable {
 			return addresses;
 		}
 
-		/* (non-Javadoc)
+		/*
+		 * (non-Javadoc)
+		 * 
 		 * @see java.lang.Object#toString()
 		 */
 		@Override
 		public String toString() {
 			return "Addresses List Map [" + addresses + "]";
 		}
-		
+
 	}
-	
+
 	public static final class Fault {
-		
+
 		private Integer code;
-		
+
 		private String message;
-		
+
 		private String details;
-		
+
 		private Calendar created;
 
 		/**
@@ -147,7 +153,9 @@ public class Server implements Serializable {
 			return created;
 		}
 
-		/* (non-Javadoc)
+		/*
+		 * (non-Javadoc)
+		 * 
 		 * @see java.lang.Object#toString()
 		 */
 		@Override
@@ -155,91 +163,91 @@ public class Server implements Serializable {
 			return "Fault [code=" + code + ", message=" + message
 					+ ", details=" + details + ", created=" + created + "]";
 		}
-		
-		
+
+
 	}
-		
+
 
 	private String id;
-	
+
 	private String name;
-	
+
 	private Addresses addresses;
-	
+
 	private List<Link> links;
-	
+
 	private Image image;
-	
+
 	private Flavor flavor;
-	
+
 	private String accessIPv4;
-	
+
 	private String accessIPv6;
-	
+
 	@JsonProperty("config_drive")
 	private String configDrive;
-	
+
 	private String status;
-	
+
 	private Integer progress;
-	
+
 	private Fault fault;
-	
+
 	@JsonProperty("tenant_id")
 	private String tenantId;
-	
+
 	@JsonProperty("user_id")
 	private String userId;
-	
+
 	@JsonProperty("key_name")
 	private String keyName;
-	
+
 	private String hostId;
-	
+
 	private String updated;
-	
+
 	private String created;
-	
+
 	private Map<String, String> metadata;
-	
+
 	@JsonProperty("security_groups")
 	private List<SecurityGroup> securityGroups;
-	
+
 	@JsonProperty("OS-EXT-STS:task_state")
 	private String taskState;
-	
+
 	@JsonProperty("OS-EXT-STS:power_state")
 	private String powerState;
-	
+
 	@JsonProperty("OS-EXT-STS:vm_state")
 	private String vmState;
-	
+
 	@JsonProperty("OS-EXT-SRV-ATTR:host")
 	private String host;
-	
+
 	@JsonProperty("OS-EXT-SRV-ATTR:instance_name")
 	private String instanceName;
-	
+
 	@JsonProperty("OS-EXT-SRV-ATTR:hypervisor_hostname")
 	private String hypervisorHostname;
-	
+
 	@JsonProperty("OS-DCF:diskConfig")
 	private String diskConfig;
-	
+
 	@JsonProperty("OS-EXT-AZ:availability_zone")
 	private String availabilityZone;
 
-    @JsonProperty("OS-SRV-USG:launched_at")
-    private String launchedAt;
+	@JsonProperty("OS-SRV-USG:launched_at")
+	private String launchedAt;
 
-    @JsonProperty("OS-SRV-USG:terminated_at")
-    private String terminatedAt;
+	@JsonProperty("OS-SRV-USG:terminated_at")
+	private String terminatedAt;
 
-    @JsonProperty("os-extended-volumes:volumes_attached")
-    private List<String> osExtendedVolumesAttached;
-	
+	@JsonProperty("os-extended-volumes:volumes_attached")
+	private List<String> osExtendedVolumesAttached;
+
 	private String uuid;
-	
+
 	private String adminPass;
 
 	/**
@@ -278,7 +286,8 @@ public class Server implements Serializable {
 	}
 
 	/**
-	 * @param image the image to set
+	 * @param image
+	 *            the image to set
 	 */
 	public void setImage(Image image) {
 		this.image = image;
@@ -290,9 +299,10 @@ public class Server implements Serializable {
 	public Flavor getFlavor() {
 		return flavor;
 	}
-	
+
 	/**
-	 * @param flavor the flavor to set
+	 * @param flavor
+	 *            the flavor to set
 	 */
 	public void setFlavor(Flavor flavor) {
 		this.flavor = flavor;
@@ -452,28 +462,28 @@ public class Server implements Serializable {
 		return availabilityZone;
 	}
 
-    /**
-     * @return the launchedAt
-     */
-    public String getLaunchedAt() {
-        return launchedAt;
-    }
+	/**
+	 * @return the launchedAt
+	 */
+	public String getLaunchedAt() {
+		return launchedAt;
+	}
 
-    /**
-     * @return the terminatedAt
-     */
-    public String getTerminatedAt() {
-        return terminatedAt;
-    }
+	/**
+	 * @return the terminatedAt
+	 */
+	public String getTerminatedAt() {
+		return terminatedAt;
+	}
 
-    /**
-     * @return the osExtendedVolumesAttached
-     */
-    public List<String> getOsExtendedVolumesAttached() {
-        return osExtendedVolumesAttached;
-    }
+	/**
+	 * @return the osExtendedVolumesAttached
+	 */
+	public List<String> getOsExtendedVolumesAttached() {
+		return osExtendedVolumesAttached;
+	}
 
-    /**
+	/**
 	 * @return the uuid
 	 */
 	public String getUuid() {
@@ -487,7 +497,9 @@ public class Server implements Serializable {
 		return adminPass;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -506,8 +518,8 @@ public class Server implements Serializable {
 				+ ", hypervisorHostname=" + hypervisorHostname
 				+ ", diskConfig=" + diskConfig + ", availabilityZone="
 				+ availabilityZone + ", launchedAt=" + launchedAt + ", terminatedAt="
-                + ", " + "osExtendedVolumesAttached=" + osExtendedVolumesAttached
-                + ", uuid=" + uuid + ", adminPass="
+				+ ", " + "osExtendedVolumesAttached=" + osExtendedVolumesAttached
+				+ ", uuid=" + uuid + ", adminPass="
 				+ adminPass + "]";
 	}
 

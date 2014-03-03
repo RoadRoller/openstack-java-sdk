@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class FloatingIps implements Iterable<FloatingIp>, Serializable {
 
@@ -17,8 +17,10 @@ public class FloatingIps implements Iterable<FloatingIp>, Serializable {
 	public List<FloatingIp> getList() {
 		return list;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -30,5 +32,5 @@ public class FloatingIps implements Iterable<FloatingIp>, Serializable {
 	public Iterator<FloatingIp> iterator() {
 		return list.iterator();
 	}
-	
+
 }

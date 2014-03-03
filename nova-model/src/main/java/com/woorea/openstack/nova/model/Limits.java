@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("limits")
 public class Limits implements Serializable {
@@ -226,7 +226,7 @@ public class Limits implements Serializable {
 		public Integer getMaxSecurityGroupRules() {
 			return maxSecurityGroupRules;
 		}
-		
+
 		/**
 		 * @return the maxTotalKeypairs
 		 */
@@ -268,7 +268,7 @@ public class Limits implements Serializable {
 		public Integer getMaxSecurityGroups() {
 			return maxSecurityGroups;
 		}
-		
+
 		/**
 		 * @return the totalVolumeGigabytesUsed
 		 */

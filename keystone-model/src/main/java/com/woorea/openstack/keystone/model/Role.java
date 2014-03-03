@@ -2,17 +2,17 @@ package com.woorea.openstack.keystone.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("role")
 public class Role implements Serializable {
 
 	private String id;
-	
+
 	private String name;
-	
+
 	private String description;
-	
+
 	private String enabled;
 
 	/**
@@ -30,7 +30,8 @@ public class Role implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -44,7 +45,8 @@ public class Role implements Serializable {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -58,7 +60,8 @@ public class Role implements Serializable {
 	}
 
 	/**
-	 * @param enabled the enabled to set
+	 * @param enabled
+	 *            the enabled to set
 	 */
 	public void setEnabled(String enabled) {
 		this.enabled = enabled;

@@ -3,16 +3,16 @@ package com.woorea.openstack.quantum.model;
 import java.io.Serializable;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.annotate.JsonValue;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 @JsonRootName("subnet")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Subnet implements Serializable{
-	
+public class Subnet implements Serializable {
+
 	private String name;
 	@JsonProperty("enable_dhcp")
 	private boolean enableDHCP;
@@ -32,7 +32,7 @@ public class Subnet implements Serializable{
 	private String gw;
 	private String cidr;
 	private String id;
-	
+
 	public static enum IpVersion implements Serializable {
 		IPV4(4), IPV6(6);
 		private int code;
@@ -61,7 +61,7 @@ public class Subnet implements Serializable{
 			return String.valueOf(code);
 		}
 	}
-	
+
 
 	/**
 	 * @return the name
@@ -72,7 +72,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -88,7 +89,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param enableDHCP the enableDHCP to set
+	 * @param enableDHCP
+	 *            the enableDHCP to set
 	 */
 	public void setEnableDHCP(boolean enableDHCP) {
 		this.enableDHCP = enableDHCP;
@@ -104,7 +106,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param networkId the networkId to set
+	 * @param networkId
+	 *            the networkId to set
 	 */
 	public void setNetworkId(String networkId) {
 		this.networkId = networkId;
@@ -120,7 +123,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param tenantId the tenantId to set
+	 * @param tenantId
+	 *            the tenantId to set
 	 */
 	public void setTenantId(String tenantId) {
 		this.tenantId = tenantId;
@@ -136,7 +140,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param dnsNames the dnsNames to set
+	 * @param dnsNames
+	 *            the dnsNames to set
 	 */
 	public void setDnsNames(List<String> dnsNames) {
 		this.dnsNames = dnsNames;
@@ -152,7 +157,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param list the list to set
+	 * @param list
+	 *            the list to set
 	 */
 	public void setList(List<Pool> list) {
 		this.list = list;
@@ -168,7 +174,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param hostRoutes the hostRoutes to set
+	 * @param hostRoutes
+	 *            the hostRoutes to set
 	 */
 	public void setHostRoutes(List<String> hostRoutes) {
 		this.hostRoutes = hostRoutes;
@@ -184,7 +191,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param ipversion the ipversion to set
+	 * @param ipversion
+	 *            the ipversion to set
 	 */
 	public void setIpversion(IpVersion ipversion) {
 		this.ipversion = ipversion;
@@ -200,7 +208,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param gw the gw to set
+	 * @param gw
+	 *            the gw to set
 	 */
 	public void setGw(String gw) {
 		this.gw = gw;
@@ -216,7 +225,8 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param cidr the cidr to set
+	 * @param cidr
+	 *            the cidr to set
 	 */
 	public void setCidr(String cidr) {
 		this.cidr = cidr;
@@ -232,14 +242,17 @@ public class Subnet implements Serializable{
 
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
 	}
 
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

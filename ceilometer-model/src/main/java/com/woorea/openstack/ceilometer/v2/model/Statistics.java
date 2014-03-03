@@ -2,34 +2,34 @@ package com.woorea.openstack.ceilometer.v2.model;
 
 import java.math.BigDecimal;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Statistics {
-	
+
 	private BigDecimal avg;
-	
+
 	private BigDecimal count;
-	
+
 	private BigDecimal duration;
-	
+
 	@JsonProperty("duration_start")
 	private String durationStart;
-	
+
 	@JsonProperty("duration_end")
 	private String durationEnd;
-	
+
 	private BigDecimal max;
-	
+
 	private BigDecimal min;
-	
+
 	private BigDecimal period;
-	
+
 	@JsonProperty("period_start")
 	private String periodStart;
-	
+
 	@JsonProperty("period_end")
 	private String periodEnd;
-	
+
 	private BigDecimal sum;
 
 	public BigDecimal getAvg() {
@@ -84,5 +84,5 @@ public class Statistics {
 				+ min + ", period=" + period + ", periodStart=" + periodStart
 				+ ", periodEnd=" + periodEnd + ", sum=" + sum + "]";
 	}
-	
+
 }

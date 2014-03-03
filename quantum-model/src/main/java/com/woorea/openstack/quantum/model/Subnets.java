@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Subnets implements Serializable, Iterable<Subnet> {
-	
+
 	@JsonProperty("subnets")
 	private List<Subnet> list;
-	
+
 	/**
 	 * @return the list
 	 */
@@ -19,16 +19,19 @@ public class Subnets implements Serializable, Iterable<Subnet> {
 	}
 
 	/**
-	 * @param list the list to set
+	 * @param list
+	 *            the list to set
 	 */
 	public void setList(List<Subnet> list) {
 		this.list = list;
 	}
 
+	@Override
 	public String toString() {
 		return "Subnets [list=" + list + "]";
 	}
-	
+
+	@Override
 	public Iterator<Subnet> iterator() {
 		return list.iterator();
 	}

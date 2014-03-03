@@ -1,38 +1,38 @@
 package com.woorea.openstack.nova.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("quota_set")
 public class QuotaSet {
 
 	private String id;
-	
+
 	@JsonProperty("metadata_items")
 	private Integer metadataItems;
-	
+
 	@JsonProperty("injected_file_content_bytes")
 	private Integer injectedFileContentBytes;
-	
+
 	@JsonProperty("injected_files")
 	private Integer injectedFiles;
-	
+
 	private Integer gigabytes;
-	
+
 	private Integer ram;
-	
+
 	@JsonProperty("floating_ips")
 	private Integer floatingIps;
-	
+
 	private Integer instances;
-	
+
 	private Integer volumes;
-	
+
 	private Integer cores;
-	
+
 	@JsonProperty("security_groups")
 	private Integer securityGroups;
-	
+
 	@JsonProperty("security_group_rules")
 	private Integer securityGroupRules;
 

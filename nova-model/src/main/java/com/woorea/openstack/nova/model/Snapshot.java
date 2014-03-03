@@ -2,26 +2,26 @@ package com.woorea.openstack.nova.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("snapshot")
 public class Snapshot implements Serializable {
 
 	private String id;
-	
+
 	private String status;
-	
+
 	@JsonProperty("displayName")
 	private String name;
-	
+
 	@JsonProperty("displayDescription")
 	private String description;
-	
+
 	private String volumeId;
-	
+
 	private Integer size;
-	
+
 	private String createdAt;
 
 	/**
@@ -73,7 +73,9 @@ public class Snapshot implements Serializable {
 		return createdAt;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -83,5 +85,5 @@ public class Snapshot implements Serializable {
 				+ ", volumeId=" + volumeId + ", size=" + size + ", createdAt="
 				+ createdAt + "]";
 	}
-	
+
 }

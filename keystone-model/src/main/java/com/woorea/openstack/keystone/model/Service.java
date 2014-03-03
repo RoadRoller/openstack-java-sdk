@@ -2,17 +2,17 @@ package com.woorea.openstack.keystone.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("OS-KSADM:service")
 public class Service implements Serializable {
 
 	private String id;
-	
+
 	private String type;
-	
+
 	private String name;
-	
+
 	private String description;
 
 	/**
@@ -30,7 +30,8 @@ public class Service implements Serializable {
 	}
 
 	/**
-	 * @param type the type to set
+	 * @param type
+	 *            the type to set
 	 */
 	public void setType(String type) {
 		this.type = type;
@@ -44,7 +45,8 @@ public class Service implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -58,13 +60,16 @@ public class Service implements Serializable {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -72,5 +77,5 @@ public class Service implements Serializable {
 		return "Service [id=" + id + ", type=" + type + ", name=" + name
 				+ ", description=" + description + "]";
 	}
-	
+
 }

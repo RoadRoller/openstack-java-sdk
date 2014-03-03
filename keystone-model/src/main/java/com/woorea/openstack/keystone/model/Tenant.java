@@ -2,35 +2,35 @@ package com.woorea.openstack.keystone.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("tenant")
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Tenant implements Serializable {
 
 	private String id;
-	
+
 	private String name;
-	
+
 	private String description;
-	
+
 	private Boolean enabled;
-	
+
 	public Tenant(String name, String description, Boolean enabled) {
 		this.name = name;
 		this.description = description;
 		this.enabled = enabled;
 	}
-	
+
 	public Tenant(String name, String description) {
 		this(name, description, Boolean.TRUE);
 	}
-	
+
 	public Tenant(String name) {
 		this(name, null);
 	}
-	
+
 	public Tenant() {
 	}
 
@@ -42,7 +42,8 @@ public class Tenant implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -56,7 +57,8 @@ public class Tenant implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -70,7 +72,8 @@ public class Tenant implements Serializable {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -84,13 +87,16 @@ public class Tenant implements Serializable {
 	}
 
 	/**
-	 * @param enabled the enabled to set
+	 * @param enabled
+	 *            the enabled to set
 	 */
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -98,5 +104,5 @@ public class Tenant implements Serializable {
 		return "Tenant [id=" + id + ", name=" + name + ", description="
 				+ description + ", enabled=" + enabled + "]";
 	}
-	
+
 }

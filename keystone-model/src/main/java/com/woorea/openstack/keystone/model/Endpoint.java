@@ -2,25 +2,25 @@ package com.woorea.openstack.keystone.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("endpoint")
 public class Endpoint implements Serializable {
 
 	private String id;
-	
+
 	@JsonProperty("service_id")
 	private String serviceId;
-	
+
 	private String region;
-	
+
 	@JsonProperty("publicurl")
 	private String publicURL;
-	
+
 	@JsonProperty("internalurl")
 	private String internalURL;
-	
+
 	@JsonProperty("adminurl")
 	private String adminURL;
 
@@ -32,7 +32,8 @@ public class Endpoint implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -46,7 +47,8 @@ public class Endpoint implements Serializable {
 	}
 
 	/**
-	 * @param serviceId the serviceId to set
+	 * @param serviceId
+	 *            the serviceId to set
 	 */
 	public void setServiceId(String serviceId) {
 		this.serviceId = serviceId;
@@ -60,7 +62,8 @@ public class Endpoint implements Serializable {
 	}
 
 	/**
-	 * @param region the region to set
+	 * @param region
+	 *            the region to set
 	 */
 	public void setRegion(String region) {
 		this.region = region;
@@ -74,7 +77,8 @@ public class Endpoint implements Serializable {
 	}
 
 	/**
-	 * @param publicURL the publicURL to set
+	 * @param publicURL
+	 *            the publicURL to set
 	 */
 	public void setPublicURL(String publicURL) {
 		this.publicURL = publicURL;
@@ -88,7 +92,8 @@ public class Endpoint implements Serializable {
 	}
 
 	/**
-	 * @param internalURL the internalURL to set
+	 * @param internalURL
+	 *            the internalURL to set
 	 */
 	public void setInternalURL(String internalURL) {
 		this.internalURL = internalURL;
@@ -102,13 +107,16 @@ public class Endpoint implements Serializable {
 	}
 
 	/**
-	 * @param adminURL the adminURL to set
+	 * @param adminURL
+	 *            the adminURL to set
 	 */
 	public void setAdminURL(String adminURL) {
 		this.adminURL = adminURL;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -117,5 +125,5 @@ public class Endpoint implements Serializable {
 				+ region + ", publicURL=" + publicURL + ", internalURL="
 				+ internalURL + ", adminURL=" + adminURL + "]";
 	}
-	
+
 }

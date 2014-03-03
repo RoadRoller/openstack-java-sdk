@@ -3,13 +3,12 @@ package com.woorea.openstack.quantum.model;
 import java.io.Serializable;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("subnet")
+public class SubnetForCreate implements Serializable {
 
-public class SubnetForCreate implements Serializable{
-	
 	private String name;
 	@JsonProperty("network_id")
 	private String networkId;
@@ -18,11 +17,12 @@ public class SubnetForCreate implements Serializable{
 	private String cidr;
 	@JsonProperty("allocation_pools")
 	private List<Pool> list;
-    @JsonProperty("tenant_id")
-    private String tenantId;
-	
+	@JsonProperty("tenant_id")
+	private String tenantId;
+
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -34,21 +34,23 @@ public class SubnetForCreate implements Serializable{
 	public String getName() {
 		return name;
 	}
+
 	/**
 	 * @return the id
 	 */
 	public String getNetworkId() {
 		return networkId;
 	}
-	
+
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setNetworkId(String id) {
 		this.networkId = id;
 	}
-	
-	
+
+
 	/**
 	 * @return the ipVersion
 	 */
@@ -57,7 +59,8 @@ public class SubnetForCreate implements Serializable{
 	}
 
 	/**
-	 * @param ipVersion the ipVersion to set
+	 * @param ipVersion
+	 *            the ipVersion to set
 	 */
 	public void setIpVersion(int ipVersion) {
 		this.ipVersion = ipVersion;
@@ -69,39 +72,42 @@ public class SubnetForCreate implements Serializable{
 	public String getCidr() {
 		return cidr;
 	}
-	
+
 	/**
-	 * @param cidr the cidr to set
+	 * @param cidr
+	 *            the cidr to set
 	 */
 	public void setCidr(String cidr) {
 		this.cidr = cidr;
 	}
-	
+
 	/**
 	 * @return the list
 	 */
 	public List<Pool> getList() {
 		return list;
 	}
-	
+
 	/**
-	 * @param list the list to set
+	 * @param list
+	 *            the list to set
 	 */
 	public void setList(List<Pool> list) {
 		this.list = list;
 	}
 
-    /**
-     * @return the tenantId
-     */
-    public String getTenantId() {
-        return tenantId;
-    }
+	/**
+	 * @return the tenantId
+	 */
+	public String getTenantId() {
+		return tenantId;
+	}
 
-    /**
-     * @param tenantId the tenantId to set
-     */
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
+	/**
+	 * @param tenantId
+	 *            the tenantId to set
+	 */
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}
 }

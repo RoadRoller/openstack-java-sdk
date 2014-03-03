@@ -2,33 +2,33 @@ package com.woorea.openstack.nova.model;
 
 import java.io.Serializable;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("keypair")
 public class KeyPair implements Serializable {
 
 	private String name;
-	
+
 	@JsonProperty("user_id")
 	private String userId;
-	
+
 	@JsonProperty("public_key")
 	private String publicKey;
-	
+
 	@JsonProperty("private_key")
 	private String privateKey;
-	
+
 	private String fingerprint;
 
 	public KeyPair() {
 		super();
 	}
-	
+
 	public KeyPair(String name) {
 		this.name = name;
 	}
-	
+
 	public KeyPair(String name, String publicKey) {
 		this(name);
 		this.publicKey = publicKey;
@@ -42,7 +42,8 @@ public class KeyPair implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -63,7 +64,8 @@ public class KeyPair implements Serializable {
 	}
 
 	/**
-	 * @param publicKey the publicKey to set
+	 * @param publicKey
+	 *            the publicKey to set
 	 */
 	public void setPublicKey(String publicKey) {
 		this.publicKey = publicKey;
@@ -83,7 +85,9 @@ public class KeyPair implements Serializable {
 		return fingerprint;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -93,6 +97,5 @@ public class KeyPair implements Serializable {
 				+ fingerprint + "]";
 	}
 
-	
-	
+
 }

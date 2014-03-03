@@ -4,34 +4,34 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonRootName("volume")
 public class Volume implements Serializable {
 
 	private String id;
-	
+
 	private String status;
-	
+
 	@JsonProperty("displayName")
 	private String name;
-	
+
 	@JsonProperty("displayDescription")
 	private String description;
-	
+
 	private String availabilityZone;
 
 	private String volumeType;
-	
+
 	private String snapshotId;
-	
+
 	private List<Map<String, Object>> attachments;
-	
+
 	private Map<String, String> metadata;
-	
+
 	private String createdAt;
-	
+
 	private Integer size;
 
 	/**
@@ -111,6 +111,5 @@ public class Volume implements Serializable {
 		return size;
 	}
 
-	
-	
+
 }
