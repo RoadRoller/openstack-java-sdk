@@ -9,6 +9,17 @@ public class GatewayInfo implements Serializable {
 	@JsonProperty("network_id")
 	private String networkId;
 
+	@JsonProperty("enable_snat")
+	private String enableSnat;
+
+	public String getEnableSnat() {
+		return enableSnat;
+	}
+
+	public void setEnableSnat(String enableSnat) {
+		this.enableSnat = enableSnat;
+	}
+
 	public String getNetworkId() {
 		return networkId;
 	}
